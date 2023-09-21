@@ -6,6 +6,7 @@ class Classroom
 
   def add_student(student)
     @students << student
+    student.classroom = self
   end
 
   attr_accessor :label
