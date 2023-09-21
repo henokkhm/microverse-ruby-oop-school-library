@@ -8,8 +8,7 @@ class Book
   end
 
   def rent(date, person)
-    new_rental = Rental.new(date, person, self)
-    @rental << new_rental
+    Rental.new(date, person, self)
   end
 
   attr_accessor :title, :author
