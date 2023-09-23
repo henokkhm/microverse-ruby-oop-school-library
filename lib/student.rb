@@ -1,12 +1,9 @@
 require './person'
 
 class Student < Person
-  def initialize(age, classroom, name = 'Unknown', parent_permission: true)
-    super(age, name, parent_permission)
-    return unless classroom.respond_to?(:students)
-
-    @classroom = classroom
-    @classroom.add_student(self)
+  def initialize(age, parent_permission, name = 'Unknown')
+    super(age, name)
+    @parent_permission = parent_permission
   end
 
   def join_classroom(classroom)
