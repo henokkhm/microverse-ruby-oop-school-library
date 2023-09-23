@@ -12,8 +12,8 @@ class App
 
   attr_reader :persons, :books
 
-  def add_student(age, name, permission)
-    student = Student.new(age, nil, name, permission)
+  def add_student(name, age, parent_permission)
+    student = Student.new(age, parent_permission, name)
     @persons << student
   end
 
@@ -33,6 +33,6 @@ class App
 
   def get_rental_by_person_id(person_id)
     person = @persons.find { |member| member.id == person_id }
-    person.rentals
+    person ? person.rentals : []
   end
 end
