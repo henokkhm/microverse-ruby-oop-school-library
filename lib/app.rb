@@ -28,7 +28,7 @@ class App
   end
 
   def add_rental(date, book_index, person_index)
-    Rental.new(date, @persons[person_index], @books[book_index])
+    Rental.new(date, person_index, @books[book_index])
   end
 
   def get_rental_by_person_id(person_id)
