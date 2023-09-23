@@ -99,7 +99,7 @@ def accept_person_index(app)
 
   until person_index >= 0 && person_index < app.persons.length
     puts 'Please enter a valid index:'
-    gets.chomp.to_i
+    person_index = gets.chomp.to_i
   end
 
   person_index
